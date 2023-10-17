@@ -1,18 +1,18 @@
-export interface Ingredient {
+export type Ingredient = {
   id: string
   measurement: 'grams' | 'milliliters' | 'teaspoons' | 'tablespoons'
   amount: number
   name: string
 }
 
-export interface Instruction {
+export type Instruction = {
   id: string
   action: string
   followUp: string
-  ingredient: Ingredient | null
+  ingredient: Ingredient
 }
 
-export interface Recipe {
+export type Recipe = {
   id: string
   title: string
   description: string

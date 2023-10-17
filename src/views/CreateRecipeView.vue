@@ -1,24 +1,22 @@
 <script setup lang="ts">
-  import {useRecipes} from "@/stores/recipes";
-  import {storeToRefs} from "pinia";
-  import SetTitleAndDescription from "@/components/SetTitleAndDescription.vue";
-  import AddIngredients from "@/components/AddIngredients.vue";
-  import AddInstructions from "@/components/AddInstructions.vue";
-  import StepNavigator from "@/components/StepNavigator.vue";
+import SetTitleAndDescription from "@/components/SetTitleAndDescription.vue";
+import AddIngredients from "@/components/AddIngredients.vue";
+import AddInstructions from "@/components/AddInstructions.vue";
+import StepNavigator from "@/components/StepNavigator.vue";
+import {useRecipesStore} from "@/stores/recipesStore";
 
-  const recipes = useRecipes()
-  const { step } = storeToRefs(recipes)
+const recipes = useRecipesStore()
 </script>
 
 <template>
   <div class="app">
     <h1>recipit - makes it easy</h1>
 
-    <SetTitleAndDescription v-if="step === 0" />
+    <SetTitleAndDescription v-if="recipes.newRecipe.step.current === 0"/>
 
-    <AddIngredients v-if="step === 1" />
+    <AddIngredients v-if="recipes.newRecipe.step.current === 1"/>
 
-    <AddInstructions v-if="step === 2" />
+    <AddInstructions v-if="recipes.newRecipe.step.current === 2"/>
 
     <StepNavigator />
   </div>

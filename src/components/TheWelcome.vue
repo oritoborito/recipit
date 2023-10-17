@@ -1,15 +1,8 @@
 <script setup lang="ts">
-// import what I need to navigate to /app in vue 3
-import { useRouter } from 'vue-router'
+import {useNavigation} from "@/composables/navigation";
 
-// create a router instance
-const router = useRouter()
+const { navigateToPath } = useNavigation()
 
-// create a function that navigates to /app
-const navigateToApp = () => {
-  // use the router to navigate to /app
-  router.push('/app')
-}
 
 </script>
 
@@ -23,7 +16,7 @@ const navigateToApp = () => {
   <h2>
     Get started by pressing the button below
   </h2>
-  <button @click="navigateToApp">
+  <button @click="navigateToPath('/recipes')">
     GET STARTED
   </button>
 </template>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {useRouter} from "vue-router";
-import {useRecipes} from "@/stores/recipes";
+import {useRecipesStore} from "@/stores/recipesStore";
 import {storeToRefs} from "pinia";
 
 const router = useRouter()
 
-const recipes = useRecipes()
+const recipes = useRecipesStore()
 const { allRecipes } = storeToRefs(recipes)
 
 const navigateToCreateRecipe = () => {
