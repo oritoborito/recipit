@@ -1,25 +1,13 @@
 <script setup lang="ts">
 import {useRecipesStore} from "@/stores/recipesStore";
-import {watch} from "vue";
 import InputWithLabelAndDescription from "@/components/InputWithLabelAndDescription.vue";
 
 const recipes = useRecipesStore()
 
-watch(recipes, () => {
-  console.log({ recipes })
-})
 </script>
 
 <template>
   <div class="container">
-    <h2>Give your recipe a title</h2>
-    <InputWithLabelAndDescription
-        label="Enter title"
-        description="Give your recipe's title some thought"
-        placeholder="Fluffy Homemade Ciabatta Rolls"
-        :value="recipes.newRecipe.data.title ?? ''"
-        v-on:update:value="value => recipes.newRecipe.data.title = value"
-    />
     <h2>And a description</h2>
     <InputWithLabelAndDescription
         label="Enter description"

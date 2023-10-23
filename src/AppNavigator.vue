@@ -30,7 +30,7 @@ const navigateBackwards = () => {
       <button v-else @click="navigateBackwards">
         Go back
       </button>
-    </nav>
+      </nav>
   </header>
 </template>
 

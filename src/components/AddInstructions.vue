@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {useRecipesStore} from "@/stores/recipesStore";
-import Recipe from "@/components/RecipePreview.vue";
 import InputWithLabelAndDescription from "@/components/InputWithLabelAndDescription.vue";
 
 const recipes = useRecipesStore()

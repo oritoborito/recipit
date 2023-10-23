@@ -1,17 +1,17 @@
 <script setup lang="ts">
-  import Recipe from "@/components/RecipePreview.vue";
-  import {useRecipesStore} from "@/stores/recipesStore";
-  import InputWithLabelAndDescription from "@/components/InputWithLabelAndDescription.vue";
-  import {computed} from "vue";
-  const recipes = useRecipesStore();
+import {useRecipesStore} from "@/stores/recipesStore";
+import InputWithLabelAndDescription from "@/components/InputWithLabelAndDescription.vue";
+import {computed} from "vue";
 
-  const readableIngredient = computed(() => {
-    const {newRecipe} = recipes
-    const {newIngredient} = newRecipe
-    const {data} = newIngredient
-    console.log(data.name)
-    return `${data.name}, ${data.name} ${data.measurement}`
-  })
+const recipes = useRecipesStore();
+
+const readableIngredient = computed(() => {
+  const {newRecipe} = recipes
+  const {newIngredient} = newRecipe
+  const {data} = newIngredient
+  console.log(data.name)
+  return `${data.name}, ${data.name} ${data.measurement}`
+})
 
 </script>
 
@@ -26,11 +26,11 @@
         v-on:update:value="value => recipes.newRecipe.newIngredient.data.name = value"
     />
     <InputWithLabelAndDescription
-      render-as-component-type="select"
-      label="Alright, choose the unit of measurement"
-      description="Grams, spoons, liters, keep it simple."
-      :value="recipes.newRecipe.newIngredient.data.measurement"
-      v-on:update:value="value => recipes.newRecipe.newIngredient.data.measurement = value"
+        render-as-component-type="select"
+        label="Alright, choose the unit of measurement"
+        description="Grams, spoons, liters, keep it simple."
+        :value="recipes.newRecipe.newIngredient.data.measurement"
+        v-on:update:value="value => recipes.newRecipe.newIngredient.data.measurement = value"
     >
       <option value="grams">grams</option>
       <option value="milliliters">milliliters</option>
@@ -46,14 +46,16 @@
         :value="recipes.newRecipe.newIngredient.data.amount"
         v-on:update:value="value => recipes.newRecipe.newIngredient.data.amount = value"
     />
-    <button :disabled="recipes.newRecipe.newIngredient.isEmpty" @click="recipes.newRecipe.newIngredient.addToRecipe()">Add ingredient</button>
+    <button :disabled="recipes.newRecipe.newIngredient.isEmpty" @click="recipes.newRecipe.newIngredient.addToRecipe()">
+      Add ingredient
+    </button>
   </div>
 </template>
 
 <style scoped>
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 </style>

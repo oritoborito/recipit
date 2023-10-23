@@ -1,5 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import RecipesView from "@/views/RecipesView.vue";
+import CreateRecipeView from "@/views/CreateRecipeView.vue";
 
 export const routes = [
     {
@@ -18,12 +20,12 @@ export const routes = [
     {
         path: '/recipes',
         name: 'recipes',
-        component: () => import('../views/RecipesView.vue')
+        component: RecipesView
     },
     {
         path: '/create-recipe',
         name: 'create-recipe',
-        component: () => import('../views/CreateRecipeView.vue')
+        component: CreateRecipeView
     }
 ] as const
 
