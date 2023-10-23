@@ -9,21 +9,24 @@ console.log({recipes})
 
 <template>
   <div class="container">
-    <Recipe />
-
-    <h3>Now, add some instructions</h3>
-    <label>Select ingredient</label>
-    <p>Which ingredient do you want to add an instruction for?</p>
-    <select aria-label="Select ingredient" v-model="recipes.newRecipe.newInstruction.instruction.ingredient">
-      <option v-for="ingredient in recipes.newRecipe.data.ingredients" :key="ingredient.id" :value="ingredient">{{ ingredient.name }}
+    <h2>Finally, add some instructions</h2>
+    <InputWithLabelAndDescription
+      render-as-component-type="select"
+      label="Select ingredient"
+      description="Which ingredient do you want to add an instruction for?"
+      :value="recipes.newRecipe.newInstruction.instruction.ingredient.name"
+      v-on:update:value="value => recipes.newRecipe.newInstruction.instruction.ingredient = value"
+    >
+      <option v-for="ingredient in recipes.newRecipe.data.ingredients" :key="ingredient.id" :value="ingredient">
+        {{ ingredient.name }}
       </option>
-    </select>
+    </InputWithLabelAndDescription>
 
 
     <InputWithLabelAndDescription
         label="Action"
         description="What do you want to do with this ingredient?"
-        placeholder="Chop, dice, etc."
+        placeholder="Add to bowl, slice, dice, etc."
         :value="recipes.newRecipe.newInstruction.instruction.action ?? ''"
         v-on:update:value="value => recipes.newRecipe.newInstruction.instruction.action = value"
     />
@@ -31,12 +34,12 @@ console.log({recipes})
     <InputWithLabelAndDescription
         label="Follow-up"
         description="What do you want to do with this ingredient after the action?"
-        placeholder="Add to pan, etc."
+        placeholder="Stir in the rest of the ingredients"
         :value="recipes.newRecipe.newInstruction.instruction.followUp ?? ''"
         v-on:update:value="value => recipes.newRecipe.newInstruction.instruction.followUp = value"
     />
 
-    <button :disabled="recipes.newRecipe.newInstruction.isEmpty" @click="recipes.newRecipe.newInstruction.addToRecipe()">Add instruction</button>
+    <button  @click="recipes.newRecipe.newInstruction.addToRecipe()">Add instruction</button>
   </div>
 </template>
 

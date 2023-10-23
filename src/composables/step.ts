@@ -4,7 +4,7 @@ import {ref, watch} from "vue";
 export function useStep() {
     const router = useRouter()
     const route = useRoute()
-    const current = ref<number>(parseInt(route.query.step as string));
+    const current = ref<number>(parseInt(route.query.step as string ?? 0));
     const next = () => {
         const nextStep = current.value + 1
         router.push({query: {step: nextStep.toString()}})

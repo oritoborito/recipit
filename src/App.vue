@@ -1,18 +1,11 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-
+import {RouterView} from 'vue-router'
+import AppNavigator from "@/AppNavigator.vue";
 </script>
 
 <template>
-  <!--
-  <header>
-    <div class="wrapper">
-
-    </div>
-  </header>
-  -->
-
-  <RouterView />
+  <AppNavigator/>
+  <RouterView/>
 </template>
 
 <style scoped>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {useRecipesStore} from "@/stores/recipesStore";
 import {watch} from "vue";
+import InputWithLabelAndDescription from "@/components/InputWithLabelAndDescription.vue";
 
 const recipes = useRecipesStore()
 
@@ -12,21 +13,29 @@ watch(recipes, () => {
 <template>
   <div class="container">
     <h2>Give your recipe a title</h2>
-    <label for="">Enter title</label>
-    <input type="text" aria-label="Enter title" v-model="recipes.newRecipe.data.title" placeholder="title">
+    <InputWithLabelAndDescription
+        label="Enter title"
+        description="Give your recipe's title some thought"
+        placeholder="Fluffy Homemade Ciabatta Rolls"
+        :value="recipes.newRecipe.data.title ?? ''"
+        v-on:update:value="value => recipes.newRecipe.data.title = value"
+    />
     <h2>And a description</h2>
-    <label for="">Enter description</label>
-    <input type="text" aria-label="Enter description" v-model="recipes.newRecipe.data.description" placeholder="description">
+    <InputWithLabelAndDescription
+        label="Enter description"
+        description="This is your time to shine, describe your masterpiece"
+        placeholder="Alright, my friend. These here, Fluffy Homemade Ciabatta Rolls, they're a taste of the old country. Light as a feather, with a crust that'll make you sing. Perfecto for any spread, capisce?"
+        render-as-component-type="textarea"
+       :value="recipes.newRecipe.data.description"
+        v-on:update:value="value => recipes.newRecipe.data.title = value"
+    />
   </div>
 </template>
 
 <style scoped>
-@media (min-width: 1024px) {
-
   .container {
     display: flex;
     flex-direction: column;
-    gap: .2rem;
+    gap: 1rem;
   }
-}
 </style>

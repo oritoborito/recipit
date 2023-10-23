@@ -6,6 +6,10 @@ import {useRecipe} from "@/composables/recipe";
 export const useRecipesStore = defineStore('recipes', () => {
     const allRecipes = ref<Recipe[]>()
     const newRecipe = useRecipe()
+    const recipeCreationStep = ref<number>(0);
 
-    return {allRecipes, newRecipe}
+    const increaseStep = () => recipeCreationStep.value++
+    const decreaseStep = () => recipeCreationStep.value--
+
+    return {allRecipes, newRecipe, recipeCreationStep, increaseStep, decreaseStep}
 })
