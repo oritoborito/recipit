@@ -3,6 +3,7 @@ type ComponentType = 'input' | 'textarea' | 'select'
 
 const props = withDefaults(
     defineProps<{
+      title?: string
       label: string
       description: string
       value: string | number
@@ -28,40 +29,49 @@ const getValueIfComponentIsOfType = (type: ComponentType, attribute: string | nu
 </script>
 
 <template>
-  <div>
-    <label :for="inputId">{{ label }}</label>
-    <span>{{ description }}</span>
-    <component
-        :is="renderAsComponentType"
-        :id="inputId"
-        :pattern="getValueIfComponentIsOfType('input', pattern)"
-        :type="getValueIfComponentIsOfType('input', inputType)"
-        :rows="getValueIfComponentIsOfType('textarea',10)"
-        :placeholder="placeholder"
-        :value="value"
-        @input="$emit('update:modelValue', $event)"
-    >
-      <slot />
-    </component>
+  <div class="container">
+    <h2 v-if="title">{{ title }}</h2>
+    <div>
+      <label :for="inputId">{{ label }}</label>
+      <span>{{ description }}</span>
+      <component
+          :is="renderAsComponentType"
+          :id="inputId"
+          :pattern="getValueIfComponentIsOfType('input', pattern)"
+          :type="getValueIfComponentIsOfType('input', inputType)"
+          :rows="getValueIfComponentIsOfType('textarea',10)"
+          :placeholder="placeholder"
+          :value="value"
+          @input="$emit('update:value', $event.target.value)"
+      >
+        <slot/>
+      </component>
+    </div>
   </div>
 </template>
 
 <style scoped>
-  div {
-    display: grid;
-    width: fit-content;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-  label {
-    font-weight: bold;
-  }
+div {
+  display: grid;
+  width: fit-content;
+}
 
-  textarea, input, select {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0.5rem;
-    font-family: sans-serif;
-  }
+label {
+  font-weight: bold;
+}
+
+textarea, input, select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-family: sans-serif;
+}
 
 
-  </style>
+</style>
