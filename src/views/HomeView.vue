@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import TheWelcome from '../components/TheWelcome.vue'
+import SimpleLayout from "@/components/SimpleLayout.vue";
 </script>
 
 <template>
-  <main>
+  <SimpleLayout>
     <TheWelcome />
-  </main>
+  </SimpleLayout>
 </template>

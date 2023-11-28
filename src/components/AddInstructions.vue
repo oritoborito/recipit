@@ -39,7 +39,8 @@ console.log({recipes})
       v-on:update:value="value => recipes.newRecipe.newInstruction.instruction.followUp = value"
   />
 
-  <button @click="recipes.newRecipe.newInstruction.addToRecipe()">Add instruction</button>
+
+  <Button @click="recipes.newRecipe.newInstruction.addToRecipe()">Add instruction</Button>
 </template>
 
 <style scoped>

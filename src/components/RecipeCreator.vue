@@ -5,6 +5,7 @@ import RecipeStepNavigator from "@/components/StepNavigator.vue";
 import {ref} from "vue";
 import RecipePreviewer from "@/components/RecipePreviewer.vue";
 import InputWithLabelAndDescription from "@/components/InputWithLabelAndDescription.vue";
+import Button from "@/components/Button.vue";
 
 const recipes = useRecipesStore()
 const isPreviewingRecipe = ref<boolean>(false)
@@ -79,10 +80,10 @@ const displayComponent = (atStep: number) => {
           :value="recipes.newRecipe.newIngredient.data.amount"
           v-on:update:value="value => recipes.newRecipe.newIngredient.data.amount = value"
       />
-      <button :disabled="recipes.newRecipe.newIngredient.isEmpty"
+      <Button :disabled="recipes.newRecipe.newIngredient.isEmpty"
               @click="recipes.newRecipe.newIngredient.addToRecipe()">
         Add ingredient
-      </button>
+      </Button>
     </template>
     <AddInstructions v-if="displayComponent(5)"/>
     <RecipeStepNavigator v-if="!isPreviewingRecipe"/>

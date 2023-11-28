@@ -1,0 +1,18 @@
+/* color palette */
+:root {
+    --color-white: #dedede;
+    --color-black: #181818;
+}
+
+/* semantic color variables for this project */
+:root {
+    --color-background: var(--color-white);
+    --color-text: var(--color-black);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: var(--color-black);
+        --color-text: var(--color-white);
+    }
+}

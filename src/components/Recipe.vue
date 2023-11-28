@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type {Instruction} from "@/types";
 import {useRecipesStore} from "@/stores/recipesStore";
+import Button from "@/components/Button.vue";
 
 
 const recipes = useRecipesStore()
@@ -18,7 +19,7 @@ const createInstuctionString = ({action, followUp, ingredient}: Instruction) => 
     <h3>Ingredients</h3>
     <li v-for="ingredient in recipes.newRecipe.data.ingredients" :key="ingredient.id">
       {{ ingredient.amount }} {{ ingredient.measurement }} {{ ingredient.name }}
-      <button @click="recipes.newRecipe.removeIngredient(ingredient)">Remove ingredient</button>
+      <Button @click="recipes.newRecipe.removeIngredient(ingredient)">Remove ingredient</Button>
     </li>
   </ul>
   <hr>

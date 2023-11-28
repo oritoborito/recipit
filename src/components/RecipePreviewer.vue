@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Recipe from "@/components/Recipe.vue";
 import {computed} from "vue";
+import Button from "@/components/Button.vue";
 
 const props = defineProps<{
   onToggle: () => void
@@ -14,7 +15,7 @@ const toggleRecipeText = computed(() => {
 
 <template>
   <Recipe v-if="isPreviewing" />
-  <button @click="onToggle">{{toggleRecipeText}}</button>
+  <Button @click="onToggle">{{toggleRecipeText}}</Button>
 </template>
 
 <style scoped>

@@ -23,8 +23,8 @@ const inputId = Math.random().toString(36).slice(2)
 const isRenderedAsType = (type: ComponentType) => {
   return props.renderAsComponentType === type
 }
-const getValueIfComponentIsOfType = (type: ComponentType, attribute: string | number | undefined) => {
-  return isRenderedAsType(type) ? attribute : undefined
+const getValueIfComponentIsOfType = (type: ComponentType, value: string | number | undefined) => {
+  return isRenderedAsType(type) ? value : undefined
 }
 </script>
 
@@ -46,7 +46,7 @@ const getValueIfComponentIsOfType = (type: ComponentType, attribute: string | nu
       >
         <slot/>
       </component>
-    </div>
+  </div>
   </div>
 </template>
 

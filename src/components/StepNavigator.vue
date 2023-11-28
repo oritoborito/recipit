@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {useRecipesStore} from "@/stores/recipesStore";
 import {computed} from "vue";
+import Button from "@/components/Button.vue";
 
 const recipes = useRecipesStore()
 
@@ -14,8 +15,8 @@ const previous = () => recipes.decreaseStep()
 
 <template>
   <div class="step-navigator">
-    <button @click="next()">Next</button>
-    <button :disabled="isOnFirstStep" @click="previous()">Previous</button>
+    <Button @click="next()">Next</Button>
+    <Button :disabled="isOnFirstStep" @click="previous()">Previous</Button>
   </div>
 </template>
 <style scoped>
