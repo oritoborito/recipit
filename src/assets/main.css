@@ -39,8 +39,3 @@ body {
     display: grid;
     grid-template-rows: 100px 1fr 100px;
 }
-
-a {
-    text-decoration: none;
-    color: var(--color-text);
-}
