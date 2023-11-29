@@ -3,7 +3,7 @@
 import {useRouter} from "vue-router";
 import {useRecipesStore} from "@/stores/recipesStore";
 import {storeToRefs} from "pinia";
-import Button from "@/components/Button.vue";
+import Button from "@/components/SimpleButton.vue";
 import AppNavigationLink from "@/components/NavigationLink.vue";
 
 const router = useRouter()

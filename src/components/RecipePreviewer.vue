@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Recipe from "@/components/Recipe.vue";
+import Recipe from "@/components/RecipePreview.vue";
 import {computed} from "vue";
-import Button from "@/components/Button.vue";
+import Button from "@/components/SimpleButton.vue";
 
 const props = defineProps<{
   onToggle: () => void

@@ -5,7 +5,7 @@ import RecipeStepNavigator from "@/components/StepNavigator.vue";
 import {ref} from "vue";
 import RecipePreviewer from "@/components/RecipePreviewer.vue";
 import InputWithLabelAndDescription from "@/components/InputWithLabelAndDescription.vue";
-import Button from "@/components/Button.vue";
+import Button from "@/components/SimpleButton.vue";
 
 const recipes = useRecipesStore()
 const isPreviewingRecipe = ref<boolean>(false)

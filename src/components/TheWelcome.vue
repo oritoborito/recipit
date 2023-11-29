@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useNavigation} from "@/composables/navigation";
-import Button from "@/components/Button.vue";
+import Button from "@/components/SimpleButton.vue";
 
 const {navigateToPath} = useNavigation()
 </script>
@@ -23,9 +23,9 @@ const {navigateToPath} = useNavigation()
 </template>
 
 <style scoped>
-  button {
-    margin-top: 2em;
-  }
+button {
+  margin-top: 2em;
+}
 </style>
 
 

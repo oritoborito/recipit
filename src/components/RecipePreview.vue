@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type {Instruction} from "@/types";
 import {useRecipesStore} from "@/stores/recipesStore";
-import Button from "@/components/Button.vue";
+import Button from "@/components/SimpleButton.vue";
 
 
 const recipes = useRecipesStore()
