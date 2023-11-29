@@ -16,11 +16,11 @@ defineProps<{
     text-decoration: none;
     background-color: transparent;
     color: var(--color-text);
-    border: 1px solid var(--color-text);
+    border: var(--border);
+    border-radius: var(--radius);
     font-size: 12pt;
     padding: 0.5em;
     min-height: 46px;
-    border-radius: 1pt;
   }
 
   @media (min-width: 600px) {

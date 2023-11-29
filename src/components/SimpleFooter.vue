@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>made with ❤️ by <a href="#">Oritoborito</a></p>
+    <p>made with ❤️ by Oritoborito</p>
   </footer>
 </template>
 

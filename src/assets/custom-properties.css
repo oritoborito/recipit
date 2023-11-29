@@ -9,8 +9,11 @@
 
 /* semantic color variables for this project */
 :root {
-    --color-background: var(--color-white-20);
+    --color-background: var(--color-white-10);
     --color-text: var(--color-black-20);
+
+    --border: 1pt solid var(--color-text);
+    --radius: 2pt;
 }
 
 @media (prefers-color-scheme: dark) {

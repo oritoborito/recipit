@@ -62,15 +62,18 @@ div {
   width: fit-content;
 }
 
-label {
-  font-weight: bold;
+span {
+  font-size: 0.8rem;
 }
 
 textarea, input, select {
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: var(--border);
+  border-radius: var(--radius);
   padding: 0.5rem;
-  font-family: sans-serif;
+  font-family: inherit;
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: 1rem;
 }
 
 

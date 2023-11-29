@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`InputWithLabelAndDescription > renders properly 1`] = `
+"<div data-v-062c9662=\\"\\" class=\\"container\\">
+  <!--v-if-->
+  <div data-v-062c9662=\\"\\"><label data-v-062c9662=\\"\\" for=\\"armh77yi8ti\\">label</label><span data-v-062c9662=\\"\\">description</span><input data-v-062c9662=\\"\\" id=\\"armh77yi8ti\\" type=\\"text\\"></div>
+</div>"
+`;

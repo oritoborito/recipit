@@ -8,8 +8,8 @@
   button {
     background-color: transparent;
     color: var(--color-text);
-    border: 2px solid var(--color-text);
-    border-radius: 2pt;
+    border: var(--border);
+    border-radius: var(--radius);
     min-height: 48px;
     padding: 1rem;
   }
